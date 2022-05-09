@@ -5,12 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link src="./index.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <title>Apod</title>
 </head>
 
 <body>
-    <script src="index.js"></script>
+    <div class="float-container container">
+        <div class="float-child container-form">
+            <form>
+                <h1>Astronomy Picture of the Day (APOD)</h1>
+                <p>
+                    Todos os dias o APOD exibe uma incrível imagem do universo.
+                    O site Astronomy Picture of the Day (APOD) é coordenado e editado, desde 1995, pelos astrofísicos
+                    Robert Nemiroff (Michigan Technological University - MTU) e Jerry Bonnell (University of Maryland
+                    College
+                    Park - UMCP). O arquivo do APOD, presente no site, contém a mais extensa coleção de imagens
+                    astronômicas
+                    comentadas de toda a internet.
+                    Aqui você poderá selecionar a data que preferir e descobrir qual imagem do espaço foi exibida nesse
+                    dia.
+                    Explore o Universo!
+                </p>
+
+                <h3>Selecione a data desejada:</h3>
+                <label for="date"> </label>
+                <input type="date" id="dataDesejada">
+            </form>
+
+            <button type="submit" id="submit">Pesquisar</button>
+        </div>
+
+        <div class="float-child container-result" id="divResult">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
