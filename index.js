@@ -15,12 +15,12 @@ $('#submit').click(function () {
                 var elemento = `<img class="imagemApod" src="${resposta.url}" alt="" /> `
 
             } else if (resposta.media_type == 'video') {
-                var elemento = `<iframe class="video" width="560" height="315" src="${resposta.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                var elemento = `<iframe class="video iframeVideo" src="${resposta.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
             }
 
             if (elemento) {
-                elemento += `<p>${resposta.title}<p>`;
-                elemento += `<p>${resposta.explanation}<p>`;
+                elemento += `<p class="p-strong">${resposta.title}</p>`;
+                elemento += `<p>${resposta.explanation}</p>`;
 
                 $("#divResult").html(elemento);
             } else {
@@ -29,6 +29,7 @@ $('#submit').click(function () {
         },
         error: function (erro) {
             console.log(erro)
+            $("#divResult").html(`<p>${erro.responseJSON.msg}</p>`)
 
         },
     })
